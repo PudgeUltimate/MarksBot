@@ -96,6 +96,7 @@ for event in longpoll.listen():
         elif  event.type == VkEventType.MESSAGE_NEW and event.to_me and event.text and i==1:
              log[i] = event.text
              print(log[i])
+	     i = 0
              vk.messages.send(  # Отправляем сообщение
               random_id=get_random_id(),
               user_id=event.user_id,
